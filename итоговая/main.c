@@ -1,11 +1,14 @@
+#define _USE_MATH_DEFINES
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
 double func(double x) {
-    return pow(x, 7);
+    //return pow(x, 9);
     //return 1.0/3.0 * log(1 + pow(x, 4));
-    //return 1 / (x + 1);
+    //return x * atan(x);
+    //return asin(sqrt(x / (x + 1.0)));
+    return x * pow(2.0 - x * x, 12.0);
 }
 
 int sign(double x) {
@@ -133,7 +136,7 @@ double integral_equation(double *mas, double alfa, double eps) {
 }
 
 int main() {
-    double alfa = 9, x, eps = 1e-7, sum7, sum9, sum11;
+    double alfa = 8191.0/26.0, x, eps = 1e-7, sum7, sum9, sum11;
     double mas[5];
     double x_max = 0, x_min = 0;
     x = integral_equation(mas, alfa, 1e-11);
@@ -144,7 +147,6 @@ int main() {
     printf("x = %le garant = %le  mid = %le x_max = %le x_min = %le count = %g k = %g\n", x, mas[1], mas[2], x_max, x_min, mas[3], mas[4]);
     eps = 1e-9;
     x = integral_equation(mas, alfa, eps);
-    
     printf("eps %le\n", eps);
     x_max = x - (mas[0] - alfa + mas[1]) / func(x);
     x_min = x - (mas[0] - alfa - mas[1]) / func(x);
@@ -158,6 +160,7 @@ int main() {
     x_max = x - (mas[0] - alfa + mas[1]) / func(x);
     x_min = x - (mas[0] - alfa - mas[1]) / func(x);
     printf("x = %le garant = %le  mid = %le x_max = %le x_min = %le count = %g k = %g\n", x, mas[1], mas[2], x_max, x_min, mas[3], mas[4]);
-    printf("Koef: %le", (sum7 - sum9) / (sum9 - sum11));
+    printf("Koef: %le\n", (sum7 - sum9) / (sum9 - sum11));
+    printf("%le\n", 1 - x);
     return 0;
 }
