@@ -12,22 +12,22 @@
 ###### Признак сходимости
 $f(x) \ge g(x) \ge 0 \quad \forall x \in [a; \infty)$
 
-Если $\int_a^\infty f(x) \, dx$ сходится, то и $\int_a^\infty g(x) \, dx$ сходится.
+Если $\int_a^\infty f(x) \ dx$ сходится, то и $\int_a^\infty g(x) \ dx$ сходится.
 
-Если $\int_a^\infty g(x) \, dx$ расходится, то и $\int_a^\infty f(x) \, dx$ расходится.
+Если $\int_a^\infty g(x) \ dx$ расходится, то и $\int_a^\infty f(x) \ dx$ расходится.
 
 ###### Доказательство расходимости данного интеграла
 Для начала упростим наш интеграл $\int_{0}^{x} \ln \sqrt[3]{1 + t^{4}} \, dt = \alpha$ и не забываем, что $x \to \infty$
 
-Получится $\frac13 \int_{0}^{\infty} \ln(1 + t^4) \, dt$
+Получится $\frac13 \int_{0}^{\infty} \ln(1 + t^4) \ dt$
 
 Чтобы воспользоваться признаком сходимости выбираем более простую функцию, которая будет меньше.
 
-Очевидно, что $t^4 + 1 > t^4$ и так как $\ln$ монотонная возростающая функция получается, что $\ln(1 + t^4) > \ln(t^4)$. Снова упростим до $4\int_{0}^{\infty} \ln(t) \, dt$.
+Очевидно, что $t^4 + 1 > t^4$ и так как $\ln$ монотонная возростающая функция получается, что $\ln(1 + t^4) > \ln(t^4)$. Снова упростим до $4\int_{0}^{\infty} \ln(t) \ dt$.
 
-По монотонности: $\frac 13 \int_{0}^{\infty} \ln(1 + t^4) \, dt > \frac43 \int_{0}^{\infty} \ln t \, dt$
+По монотонности: $\frac 13 \int_{0}^{\infty} \ln(1 + t^4) \ dt > \frac43 \int_{0}^{\infty} \ln t \ dt$
 
-$\frac43 \int_{0}^{\infty} \ln t \, dt = \frac43\int_{0}^{1} \ln t \, dt + \frac43\int_{1}^{\infty} \ln t \, dt = \frac43\left. (t\ln t - t) \right|_0^1 + \frac43\left. (t\ln t - t) \right|_1^\infty = -\frac43 + \frac43*\infty = \infty$. 
+$\frac43 \int_{0}^{\infty} \ln t \ dt = \frac43\int_{0}^{1} \ln t \ dt + \frac43\int_{1}^{\infty} \ln t \ dt = \frac43\left. (t\ln t - t) \right|_0^1 + \frac43\left. (t\ln t - t) \right|_1^\infty = -\frac43 + \frac43*\infty = \infty$. 
 
 Интеграл расходится. Следовательно, расходится интеграл выше.
 
